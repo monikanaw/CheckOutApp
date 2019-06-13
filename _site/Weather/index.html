@@ -10,14 +10,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:100"
    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/main.css">
+   <script src="mainjs.js"></script>
 </head>
 
 
-  <div class="container">
+  <div class="web-container">
 
     <body>
-     <header>
+     <header class="main-header">
   <ul class="nav-bar">
 
    
@@ -30,12 +33,27 @@
 
 </header>
 
-    <p> Monika </p>
-<p> kkk </p>
-<p> Monika </p>
-<p> kkk </p>
-<p> Monika </p>
-<p> kkk </p>
+    <div class="bg-info text-white">
+  <h1 class="display-3"> Check the weather </h1>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="lead"> In order to check the wether in your city
+         please input your city name in English.
+       </div>
+     </div>
+     <div class="col">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Enter name of your city" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <div class="input-group-append">
+            <button class="btn btn btn-secondary" type="button" id="button-addon2">Search</button>
+          </div>
+        </div>
+</div>
+
+</div>
 
     <footer>
     <div class="footer-bar">

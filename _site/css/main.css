@@ -55,32 +55,89 @@ header {
   background-image: url('/images/cat.jpg');
   background-size: cover;
   min-height: 100vh;
-  background-position: 50% 28%;
+  background-position: 10% 30%;
+
   position: relative;
 }
 
 /*BODY GREETING*/
 .greeting{
   position: absolute;
+  opacity: 0.8;
   color: #fff;
-  top: 140px;
-  left: 40px;
-  font-size: 4em;
+  top: 70vh;
+  right: 20px;
+  font-size: 6em;
 }
+
+/*BODY WRITING*/
+.body-writing {
+  max-width: 85vw;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin: 4em auto;
+
+}
+
+.title-table {
+  font-size: 4.2em;
+  flex: 1;
+  text-align: left;
+}
+
+.title-writing {
+ font-size: 1.2em;
+ flex: 0 0 50vw;
+ flex-wrap: wrap;
+ padding-left: 4em;
+
+}
+
 
 /*BODY- FOUR CHECK OUT*/
 .four-images {
   max-width: 100vw;
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-around;
+  margin: 3em 5em 1em 5em;
 }
 
+
+
 .one-image {
+ position: relative;
+ margin-bottom: 50px;
 }
 
 .one-image img {
- max-width: 30vw;
+ width: 30vw;
+ height: 26vw;
+ margin: auto;
+
+}
+
+.writing {
+  color: #fff;
+  position: absolute;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  top: 280px;
+  left: 15px;
+  z-index: 8;
+}
+
+.description {
+  color: #000;
+  width: 30vw;
+  margin: auto;
+  font-size: 20px;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 

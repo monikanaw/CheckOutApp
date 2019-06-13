@@ -1,6 +1,11 @@
 <head>
-  <title>Monika Nawrocka- Website</title>
-      <link href="/favicon.png" rel="icon">
+  {% if page.title %}
+    <title>{{ page.title }}</title>
+  {% else %}
+    <title> Website </title>
+  {% endif %}
+
+  <link href="/favicon.png" rel="icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:100"

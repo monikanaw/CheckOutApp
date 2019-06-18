@@ -23,7 +23,7 @@ summary, time, mark, audio, video {
 /* HEADER */
 .main-header {
   background-color: #000;
-  height: 7vh;
+  min-height: 7vh;
   position: fixed;
   z-index: 10;
   width: 100vw;
@@ -156,7 +156,7 @@ footer {
   padding-top: 1.5em;
 }
 
- /* WEATHER-IMAGE */
- 
-
+ /* WEATHER */
+ .hidden-not-found {
+   display: none;
  }

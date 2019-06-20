@@ -1,3 +1,4 @@
+//the weather
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
@@ -21,7 +22,31 @@ function success() {
   $("#found").removeClass('hidden-not-found');
 }
 
-function getWeather (city) {
+function notSelectedCity() {
+  $("#notSelectedCity").removeClass('hidden-not-found');
+}
+
+function SelectedCity() {
+  $("#notSelectedCity").addClass('hidden-not-found');
+}
+
+function notSelectedDay() {
+  $("#notSelectedDay").removeClass('hidden-not-found');
+}
+
+function SelectedDay() {
+  $("#notSelectedDay").addClass('hidden-not-found');
+}
+
+function foundCity() {
+  $("#found").removeClass('hidden-not-found');
+}
+
+function notFoundCity(){
+  $("#found").addClass('hidden-not-found');
+}
+
+function getWeather(city) {
     let weatherAPI= "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=7ea00d73a83a2dc576cf68ab20a5f063"
 
     $.ajax({
@@ -29,7 +54,7 @@ function getWeather (city) {
       url: weatherAPI,
 
       statusCode: {
-         404: function (response) {
+         404: function(response) {
            notSuccess();
          }
       },
@@ -37,6 +62,7 @@ function getWeather (city) {
       success: function(data){
 
         success();
+        foundCity();
         $("#your-city").html("Today's weather in " + capitalizeFirstLetter(city));
         $("#cloud").html("cloudiness: " + data.weather[0].description);
         $("#temperature").html("temperature: " + roundNumber(calvinToCelsius(data.main.temp)) +'&#x2103;');
@@ -44,15 +70,36 @@ function getWeather (city) {
         $("#wind").html("wind speed: " + data.wind.speed + "km/h");
       }
     });
-      $(':input','#weather-form').val('');
+        $('input','#form-weather').val('');
+        $('select','#form-weather').val('selected');
+
 };
 
 $(document).ready(function() {
-  $('#city-name').focus();
-  $("#weather-form").submit(function(event){
+  $('#inputCity').focus();
+  $("#form-weather").submit(function(event){
     event.preventDefault();
+    let city = $("#inputCity").val();
 
-    let cityName = $("#city-name").val();
-    getWeather(cityName);
+
+    if (city === "") {
+      success();
+      notSelectedCity();
+      notFoundCity();
+    }
+    else {
+      SelectedCity()
+      let card = document.getElementById("inputState");
+      if(card.selectedIndex == 0) {
+        success();
+        notSelectedDay();
+        notFoundCity();
+      }
+      else {
+         success();
+         SelectedDay();
+         getWeather(city);
+      }
+    };
   });
 });

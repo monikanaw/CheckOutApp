@@ -143,20 +143,72 @@ a:link {
 
 
 /* FOOTER */
-footer {
+.footer-bar {
   background-color: #000;
   height: 10vh;
+  background-size: cover;
 }
 
- /* FOOTER-WRITING */
-.footer-bar {
+.footer-writing{
   color: #fff;
   text-align: center;
   font-weight: bold;
   padding-top: 1.5em;
 }
 
+.weather-form {
+  margin: 5em 3em;
+  max-width: 40vw;
+}
+
+
+
+
  /* WEATHER */
+.weather-image {
+  background-image: url('/images/snow.jpg');
+  background-size: cover;
+  min-height: 30vh;
+  background-position: 10% 30%;
+  position: relative;
+}
+
+.weather-greeting {
+  color: rgba(23, 32, 42, 0.7);
+  font-size: 5em;
+  position: absolute;
+  top: 15vh;
+  left: 2vh;
+}
+
+.weather-container {
+  margin: 3em 3em;
+}
+
  .hidden-not-found {
    display: none;
  }
+
+/* Time */
+
+.time-image {
+  background-image: url('/images/clock.jpg');
+  min-height: 30vh;
+  position: relative;
+  background-position: 50% 50%;
+  opacity: 0.7;
+}
+
+.time-greeting {
+  position: absolute;
+  color:rgba(  240, 243, 244, 1);
+  font-size: 5em;
+  top: 15vh;
+  left: 2vw;
+}
+
+.form-time {
+  margin: 5em auto;
+  text-align: center;
+
+}

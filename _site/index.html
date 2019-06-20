@@ -56,45 +56,39 @@
   </div>
 </div>
 
-<div class="four-images">
+<div id="notSelectedCity" class="hidden-not-found"> Please input your city </div>
+<div id="notSelectedDay" class="hidden-not-found"> Please check which weather you need </div>
+<div id="not-found" class="hidden-not-found"> We don't have your city </div>
 
-  <a href="/Weather">
-    <div class="one-image">
-      <img src="images/umbrella.jpg" alt="Weather">
-      <p class=writing> Weather </p>
-      <p class="description"> This is place where you can check todays's weather out</p>
-    </div>
-  </a>
+<div class="weather-form" id="form-weather">
+  <form>
+        <div class="form-group col-md-6">
+          <label for="inputCity">City:</label>
+          <input type="text" placeholder="Input your city" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+          <label for="inputState">Day:</label>
+          <select name="cards" id="inputState" class="form-control">
+            <option value="selected">Select</option>
+            <option value="Today">Today</option>
+            <option value="2days">2 days</option>
+          </select>
+      </div>
+      <button class="btn btn btn-secondary" type="submit" id="button-addon2">Search</button>
+  </form>
+</div>
 
-  <a href="/News">
-    <div class="one-image">
-      <img src="images/news.jpg" alt="News">
-      <p class=writing> News </p>
-      <p class="description"> This is place where you can check todays's news out</p>
-    </div>
-  </a>
-
- <a href="/Map">
-    <div class="one-image">
-      <img src="images/map.jpg" alt="Map">
-      <p class=writing> Map </p>
-      <p class="description"> This is place where you can check capital
-        city out</p>
-    </div>
-  </a>
-
- <a href="/Calendar">
-    <div class="one-image">
-      <img src="images/calendar.jpg" alt="Calendar">
-      <p class=writing> Calendar </p>
-      <p class="description"> This is place where you can check todays's date out</p>
-    </div>
-  </a>
+<div id="found">
+  <div id= "your-city"> </div>
+  <div id="cloud"> </div>
+  <div id="temperature"> </div>
+  <div id="humidity"> </div>
+  <div id="wind"> </div>
 </div>
 
     <footer>
     <div class="footer-bar">
-       <p>  Made by Monika Nawrocka </p>
+       <p class="footer-writing">  Made by Monika Nawrocka </p>
     </div>
 </footer>
 

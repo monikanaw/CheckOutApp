@@ -46,7 +46,12 @@ function notFoundCity(){
   $("#found").addClass('hidden-not-found');
 }
 
-function getWeather(city) {
+function clearInput() {
+  $('input','#form-weather').val('');
+  $('select','#form-weather').val('selected');
+}
+
+function getWeatherCurrent(city) {
     let weatherAPI= "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=7ea00d73a83a2dc576cf68ab20a5f063"
 
     $.ajax({
@@ -70,10 +75,33 @@ function getWeather(city) {
         $("#wind").html("wind speed: " + data.wind.speed + "km/h");
       }
     });
-        $('input','#form-weather').val('');
-        $('select','#form-weather').val('selected');
-
+    clearInput()
 };
+
+function getWeatherForecast(city) {
+    let weatherAPI= "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=7ea00d73a83a2dc576cf68ab20a5f063"
+
+    $.ajax({
+      type: 'get',
+      url: weatherAPI,
+
+      statusCode: {
+         404: function(response) {
+           notSuccess();
+         }
+      },
+
+      success: function(data){
+        success();
+        foundCity();
+        console.log(data);
+
+
+      }
+    });
+    clearInput()
+};
+
 
 $(document).ready(function() {
   $('#inputCity').focus();
@@ -95,10 +123,13 @@ $(document).ready(function() {
         notSelectedDay();
         notFoundCity();
       }
-      else {
+      else if (card.selectedIndex == 1) {
          success();
          SelectedDay();
-         getWeather(city);
+         getWeatherCurrent(city);
+      }
+      else {
+        getWeatherForecast(city);
       }
     };
   });

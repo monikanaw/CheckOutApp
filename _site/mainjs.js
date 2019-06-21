@@ -94,7 +94,10 @@ function getWeatherForecast(city) {
       success: function(data){
         success();
         foundCity();
-        console.log(data);
+
+        for(let i = 0; i < data.list[i].main.temp; i++){
+             console.log(data.list[i].main.temp)
+          }
 
 
       }
@@ -133,4 +136,37 @@ $(document).ready(function() {
       }
     };
   });
+});
+
+
+$(document).ready(function() {
+  let myChart = document.getElementById('myChart').getContext('2d');
+
+  Chart.defaults.globalFontFamily= 'Ariel';
+  Chart.defaults.globalFontSize= 15;
+  Chart.defaults.globalFontColor= '#fff';
+
+
+  let weatherChart = new Chart (myChart, {
+    type:'line',
+    data: {
+      labels:['monika', 'wroclaw', 'warsaw', 'krakow', 'zosia'],
+      datasets:[{
+        fill: false,
+        label:'population',
+        data: [1, 2, 3, 4, 5]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Forecast for five days',
+        fontSize: 25
+      },
+      legend: {
+        position: 'right'
+      }
+    }
+  });
+
 });

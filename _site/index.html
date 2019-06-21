@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="/mainjs.js"></script>
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
 
 
@@ -70,7 +71,7 @@
           <label for="inputState">Day:</label>
           <select name="cards" id="inputState" class="form-control">
             <option value="selected">Select</option>
-            <option value="Today">Today</option>
+            <option value="Current">Current</option>
             <option value="2days">2 days</option>
           </select>
       </div>
@@ -84,6 +85,10 @@
   <div id="temperature"> </div>
   <div id="humidity"> </div>
   <div id="wind"> </div>
+</div>
+
+<div class=chart>
+  <canvas id="myChart" height="400" width= "400"></canvas>
 </div>
 
     <footer>

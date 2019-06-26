@@ -22,16 +22,17 @@
 </head>
 
 
-  <div class="web-container">
+
 
     <body>
+      <div id="page-container">
      <header class="main-header">
   <ul class="nav-bar">
 
    
   <li><a href="/">Home</a></li>
   <li><a href="#bodyWriting">About</a></li>
-  <li><a href="/Menu">Menu</a></li>
+  <li><a href="/Weather"> Checking the weather</a></li>
 
 
  </ul>
@@ -40,7 +41,7 @@
 
     <div class="body-image">
   <div class="greeting-image">
-     <h1 class="greeting"> Weather for you </h1>
+     <h1 class="greeting"> The weather for you </h1>
   </div>
 </div>
 
@@ -70,7 +71,7 @@
         <div class="background-snow background-phenomen-weather" >
               <img src="/images/snow.jpg" alt="Snow">
               <p class="title-of-weather"> Snow </p>
-                <div class="phenomen hidden-not-found">
+                <div class="phenomen hidden">
                     <h3 class="title-phenomen"> Snow </h3>
                     <p class="writing-phenomen"> There are ice crystalsprecipitate from atmospheric vapor. Most of the time the snowflake is made up of many of these tiny ice crystals stuck together. Because snow is composed of frozen water, or ice, it can also be classified as a mineral. </p>
                </div>
@@ -79,7 +80,7 @@
         <div class="background-rain background-phenomen-weather">
               <img src="/images/raining.jpg" alt="Rain">
               <p class="title-of-weather"> Rain </p>
-                <div class="phenomen hidden-not-found">
+                <div class="phenomen hidden">
                     <h3 class="title-phenomen"> Rain </h3>
                     <p class="writing-phenomen"> There is condensed water made from atmospheric water vapor. When drop of water is heavy enough then it falls under gravity.
                     Water from raining is one of the most important part of water cycle. </p>
@@ -91,7 +92,7 @@
         <div class="background-tornado background-phenomen-weather">
           <img src="/images/tornado.jpg" alt="Tornado">
           <p class="title-of-weather"> Tornado </p>
-              <div class="phenomen hidden-not-found">
+              <div class="phenomen hidden">
                 <h3 class="title-phenomen"> Tornado </h3>
                 <p class="writing-phenomen"> There is a column of air which is made rapidly and have a contact with two surface at the same time- the Earth and cumulus cloud. Most tornadoes travel a several kilometers before dissipation. Speed of most tornadoesis less than 190km/h. </p>
               </div>
@@ -102,7 +103,7 @@
         <div class="background-lightening  background-phenomen-weather">
           <img src="/images/lightning.jpg" alt="Lightning">
           <p class="title-of-weather"> Lightening </p>
-            <div class="phenomen hidden-not-found">
+            <div class="phenomen hidden">
                 <h3 class="title-phenomen"> Lightening </h3>
                 <p class="writing-phenomen"> Lightning is often followed by thunder. There is a natural electrostatic discharge which occures in area of two electrically charged regions in the atmosphere. Every lightening can have energy equal one billion joules. </p>
             </div>
@@ -110,23 +111,28 @@
     </div>
   </div>
 
-<div class="weather-link">
-  <a href="/Weather">
-    <img class="first-image" src="images/umbrella.jpg" alt="Weather">
-    <p class="writing"> <a href="/Weather-snow">Weather</a></p>
-    <p class="description"> This is place where you can check todays's weather out</p>
-  </a>
-</div>
 
-    <footer>
+<a class="link-to-forecast" href="/Weather/index.html">
+   <div class="block-to-forecast">
+      <div "text-to-forcast">
+         <p class="title-to-forcast"> Click here for the weather forecast</p>
+         <p class="description-to-forecast"> If you want to need to know what temperature will be in your city tommorow or is it necessary to take a umbrella with you one thing you to heve to do it is click here. </p>
+      </div >
+      <div class="images-to-forecat">
+         <img src="/images/mapsweather.jpg" class="images-thermometre" alt="Mapsforecast">
+      </div>
+   </div>
+</a>
+
+    <footer id="footer">
     <div class="footer-bar">
        <p class="footer-writing">  Made by Monika Nawrocka </p>
     </div>
 </footer>
 
-
+      <div>
     </body>
 
-  </div>
+
 
 </html>

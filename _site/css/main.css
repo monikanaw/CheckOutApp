@@ -15,9 +15,26 @@ summary, time, mark, audio, video {
   font: inherit;
 }
 
-.web-container{
-  max-width: 100vw;
+body {
+ max-width: 100vw;
 }
+
+#page-container {
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ flex: 1; 
+}
+
+#content-wrap {
+      /* Footer height */
+}
+
+#footer {
+            /* Footer height */
+}
+
+
 
 /* HEADER */
 .main-header {
@@ -67,7 +84,7 @@ summary, time, mark, audio, video {
   height: 30%;
   bottom: 10vh;
   z-index: 2;
-  font-size: 5em;
+  font-size: 5rem;
   text-align: center;
   padding-top: 0.6em;
   color: #000;
@@ -117,14 +134,18 @@ summary, time, mark, audio, video {
 }
 
 .weather-form {
-  margin: 5em 3em;
+  margin: 3em 3em;
   max-width: 40vw;
+}
+
+.btn-secondary {
+  margin-left: 1em;
 }
 
 
 /* Other*/
 
- .hidden-not-found {
+ .hidden {
    display: none;
  }
 
@@ -132,6 +153,7 @@ summary, time, mark, audio, video {
 /* charts*/
 .charts {
   height: 10vh;
+
 }
 
 .chart-first {
@@ -144,22 +166,11 @@ summary, time, mark, audio, video {
   margin: 5vh auto;
 }
 
-/* ostatie*/
-.weather-link {
-  position: relative;
-  background-color: ;
-  height: 80vh;
-}
 
-.first-image{
-  max-width: 30vw;
-  position: absolute;
-   right: 3em;
-   top: 0em;
-   z-index: 2;
-}
 
-/* przedostatnie*/
+
+
+/* four images*/
 
 .weather-description {
   display: flex;
@@ -215,4 +226,69 @@ summary, time, mark, audio, video {
   color: #fff;
   text-align: center;
   margin: 2em;
+}
+
+/*link to the forecast*/
+.link-to-forecast:link{
+  text-decoration: none;
+}
+
+.block-to-forecast {
+  display: flex;
+  max-width: 90vw;
+  margin: 8em auto 6em auto;
+}
+
+.title-to-forcast{
+  color: black;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 0 1em;
+  font-family: "Times New Roma"
+}
+
+.description-to-forecast {
+  color: black;
+  font-size: 1em;
+  font-family: "Ariel";
+  font-style: italic;
+}
+
+.images-thermometre {
+  width: 40vw;
+  max-height: 30vh;
+}
+
+.text-to-forcast{
+  max-width: 30vw;
+}
+
+.images-to-forecat{
+  margin-left: 30px;
+}
+
+/*subpage*/
+.cover-for-checking {
+    background-image: url("/images/winter.jpg");
+    background-size: cover;
+    height: 30vh;
+    width: 100%;
+    background-position: 10% 30%;
+    position: relative;
+}
+
+.title-for-checking {
+  position: absolute;
+  bottom: 1vh;
+  left: 2vh;
+  color: rgba(0, 0, 0, 0.7)
+  z-index: 2;
+  font-size: 4em;
+  font-weight: bold;
+}
+
+.greeting-to-form {
+  max-width: 80vw;
+  margin: 3em auto 1em 3em;
+  font-size: 1.2em;
 }

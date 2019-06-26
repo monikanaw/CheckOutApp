@@ -1,21 +1,23 @@
+
+
 //four images abou weather
 $(document).ready(function() {
     $('.background-phenomen-weather').mouseover(function() {
-      $(this).children('div').removeClass("hidden-not-found");
+      $(this).children('div').removeClass("hidden");
     });
 
     $('.background-phenomen-weather').mouseout(function() {
-      $('.phenomen').addClass('hidden-not-found');
+      $('.phenomen').addClass('hidden');
     });
 });
 
 $(document).ready(function() {
     $('.background-phenomen-weather').mouseover(function() {
-      $(this).children('p').addClass("hidden-not-found");
+      $(this).children('p').addClass("hidden");
     });
 
     $('.background-phenomen-weather').mouseout(function() {
-      $('p').removeClass("hidden-not-found");
+      $('p').removeClass("hidden");
     });
 });
 
@@ -35,43 +37,49 @@ function calvinToCelsius (calvin) {
   return (calvin - 273.15);
 }
 
-function notSuccess() {
-  $("#found").addClass('hidden-not-found');
-  $("#not-found").removeClass('hidden-not-found')
+function lackOfThisCity() {
+  $("#notCityExist").removeClass('hidden')
 }
 
-function success() {
-  $("#not-found").addClass('hidden-not-found');
-  $("#found").removeClass('hidden-not-found');
+function thisCityExist() {
+  $("#notCityExist").addClass('hidden');
 }
 
 function notSelectedCity() {
-  $("#notSelectedCity").removeClass('hidden-not-found');
+  $("#notSelectedCity").removeClass('hidden');
 }
 
 function SelectedCity() {
-  $("#notSelectedCity").addClass('hidden-not-found');
+  $("#notSelectedCity").addClass('hidden');
 }
 
-function notSelectedDay() {
-  $("#notSelectedDay").removeClass('hidden-not-found');
+function notSelectedKindOfWeather() {
+  $("#notSelectedWhichWeather").removeClass('hidden');
 }
 
-function SelectedDay() {
-  $("#notSelectedDay").addClass('hidden-not-found');
+function SelectedKindOfWeather() {
+  $("#notSelectedWhichWeather").addClass('hidden');
 }
 
-function foundCity() {
-  $("#found").removeClass('hidden-not-found');
+function showingCurrentWeather() {
+  $("#foundCityCurrent").removeClass('hidden');
 }
 
-function notFoundCity(){
-  $("#found").addClass('hidden-not-found');
+function hidingCurrentWeather(){
+  $("#foundCityCurrent").addClass('hidden');
+}
+
+function hidingForecastWeather() {
+  $("#foundCityForecast").addClass('hidden');
+}
+
+function showingForecastWeather() {
+  $("#foundCityForecast").removeClass('hidden');
 }
 
 function clearInput() {
-  $('input','#form-weather').val('');
-  $('select','#form-weather').val('selected');
+  $('input','#formWeather').val('');
+  $('select','#formWeather').val('selected');
 }
 
 function temperaturesArray(data) {
@@ -154,14 +162,19 @@ function getWeatherCurrent(city) {
 
       statusCode: {
          404: function(response) {
-           notSuccess();
+           lackOfThisCity();
+           hidingCurrentWeather();
+           hidingForecastWeather();
          }
       },
 
       success: function(data){
+        SelectedKindOfWeather();
+        SelectedCity();
+        thisCityExist();
+        hidingForecastWeather();
+        showingCurrentWeather();
 
-        success();
-        foundCity();
         $("#your-city").html("Current's weather in " + capitalizeFirstLetter(city));
         $("#cloud").html("cloudiness: " + data.weather[0].description);
         $("#temperature").html("temperature: " + roundNumber(calvinToCelsius(data.main.temp)) +'&#x2103;');
@@ -169,7 +182,7 @@ function getWeatherCurrent(city) {
         $("#wind").html("wind speed: " + data.wind.speed + "km/h");
       }
     });
-    clearInput()
+    clearInput();
 };
 
 function getWeatherForecast(city) {
@@ -181,52 +194,62 @@ function getWeatherForecast(city) {
 
       statusCode: {
          404: function(response) {
-           notSuccess();
+           lackOfThisCity();
+           hidingCurrentWeather();
+           hidingForecastWeather();
          }
       },
 
       success: function(data){
-        success();
-        foundCity();
+
+        SelectedKindOfWeather();
+        SelectedCity();
+        thisCityExist();
+        hidingCurrentWeather();
+        showingForecastWeather();
         getMaxValue(data)
-        console.log(pressureArray(data));
-        console.log(removingCharactersFromString(data));
-        console.log(speedWindArray(data));
         getMinValue(data)
         chartForWeather(data);
         chartForWeatherSecond(data);
+
       }
     });
-    clearInput()
+    clearInput();
 };
 
 
 $(document).ready(function() {
-  $("#form-weather").submit(function(event){
+  $('#inputCity').focus();
+  $("#formWeather").submit(function(event){
     event.preventDefault();
     let city = $("#inputCity").val();
 
-
     if (city === "") {
-      success();
       notSelectedCity();
-      notFoundCity();
+      hidingCurrentWeather();
+      hidingForecastWeather();
+      thisCityExist();
+      SelectedKindOfWeather();
+
     }
     else {
       SelectedCity()
       let card = document.getElementById("inputState");
       if(card.selectedIndex == 0) {
-        success();
-        notSelectedDay();
-        notFoundCity();
+         notSelectedKindOfWeather();
+         hidingCurrentWeather();
+         hidingForecastWeather();
+         thisCityExist();
+         SelectedCity();
       }
       else if (card.selectedIndex == 1) {
-         success();
-         SelectedDay();
+         SelectedCity();
+         SelectedKindOfWeather();
          getWeatherCurrent(city);
+
       }
       else {
-        getWeatherForecast(city);
+         getWeatherForecast(city);
       }
     };
   });

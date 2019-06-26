@@ -1,5 +1,4 @@
 
-
 //four images abou weather
 $(document).ready(function() {
     $('.background-phenomen-weather').mouseover(function() {
@@ -175,11 +174,12 @@ function getWeatherCurrent(city) {
         hidingForecastWeather();
         showingCurrentWeather();
 
-        $("#your-city").html("Current's weather in " + capitalizeFirstLetter(city));
+        $("#yourCity").html("Current's weather in " + capitalizeFirstLetter(city));
         $("#cloud").html("cloudiness: " + data.weather[0].description);
         $("#temperature").html("temperature: " + roundNumber(calvinToCelsius(data.main.temp)) +'&#x2103;');
         $("#humidity").html("humidity: " + data.main.humidity + "%");
         $("#wind").html("wind speed: " + data.wind.speed + "km/h");
+
       }
     });
     clearInput();
@@ -225,6 +225,7 @@ $(document).ready(function() {
     let city = $("#inputCity").val();
 
     if (city === "") {
+
       notSelectedCity();
       hidingCurrentWeather();
       hidingForecastWeather();

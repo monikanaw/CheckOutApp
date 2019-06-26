@@ -26,7 +26,7 @@
 
     <body>
       <div id="page-container">
-     <header class="main-header">
+         <header class="main-header">
   <ul class="nav-bar">
 
    
@@ -39,7 +39,7 @@
 
 </header>
 
-    <div id="content-wrap">
+        <div id="content-wrap">
   <div class="cover-for-checking">
       <h2 class="title-for-checking"> Check the weather </h2>
   </div>
@@ -50,11 +50,11 @@
     <form>
           <div class="form-group col-md-6">
             <label for="inputCity">City:</label>
-            <input type="text" placeholder="Input your city" class="form-control" id="inputCity">
+            <input type="text" placeholder="Input your city" class="form-control" id="inputCity" required>
         </div>
         <div class="form-group col-md-4">
-            <label for="inputState">Day:</label>
-            <select name="cards" id="inputState" class="form-control">
+            <label for="inputState">Kind of weather:</label>
+            <select name="cards" id="inputState" class="form-control" required>
               <option value="selected">Select</option>
               <option value="Current">Current</option>
               <option value="Forecast">Forecast</option>
@@ -64,12 +64,12 @@
     </form>
   </div>
 
-  <div id="notSelectedCity" class="hidden"> Please input your city </div>
-  <div id="notSelectedWhichWeather" class="hidden"> Please check which weather you need </div>
-  <div id="notCityExist" class="hidden"> We don't have your city </div>
+  <div id="notSelectedCity" class="hidden lack-of-info-in-input"> Please input your city </div>
+  <div id="notSelectedWhichWeather" class="hidden lack-of-info-in-input"> Please select which weather you need </div>
+  <div id="notCityExist" class="hidden lack-of-info-in-input"> We don't have your city, please try again </div>
 
-  <div id="foundCityCurrent" class="hidden">
-    <div id= "your-city"> </div>
+  <div id="foundCityCurrent" class="hidden city-current-info">
+    <div id= "yourCity" class="your-city"> </div>
     <div id="cloud"> </div>
     <div id="temperature"> </div>
     <div id="humidity"> </div>
@@ -86,16 +86,19 @@
       </div>
   </div>
 
+
+
 </div>
 
-    <footer id="footer">
+        <footer id="footer">
     <div class="footer-bar">
        <p class="footer-writing">  Made by Monika Nawrocka </p>
     </div>
 </footer>
 
-      <div>
+     </div>
     </body>
+
 
 
 

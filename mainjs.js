@@ -1,27 +1,15 @@
-
-
 //four images abou weather
 $(document).ready(function() {
-    $('.background-phenomen-weather').mouseover(function() {
+    $('.background-phenomen-weather').on('click mouseover', function() {
       $(this).children('div').removeClass("hidden");
-    });
-
-    $('.background-phenomen-weather').mouseout(function() {
-      $('.phenomen').addClass('hidden');
-    });
-});
-
-$(document).ready(function() {
-    $('.background-phenomen-weather').mouseover(function() {
       $(this).children('p').addClass("hidden");
     });
 
-    $('.background-phenomen-weather').mouseout(function() {
+    $('.background-phenomen-weather').on('click mouseout', function() {
+      $('.phenomen').addClass('hidden');
       $('p').removeClass("hidden");
     });
 });
-
-
 
 //the weather
 

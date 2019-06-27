@@ -155,8 +155,6 @@ body {
 
 
 
-
-
 /* four images*/
 
 .weather-description {
@@ -170,7 +168,7 @@ body {
   margin: -1em 4em 4em 4em;
 }
 
-.row-weather-lower {
+.row-weather-left {
   margin: 3em 4em 4em 4em;
 }
 
@@ -193,7 +191,6 @@ body {
   color: #fff;
   font-family: "Aclonica";
 }
-
 
 .phenomen{
   position: absolute;
@@ -299,6 +296,17 @@ body {
 }
 
 /*MEDIA QUERIES*/
+@media (max-width: 1200px) {
+  .body-writing {
+     max-width: 80vw;
+  }
+  .title-table {
+    font-size: 3.2em;
+  }
+  .title-writing {
+   font-size: 1.4em;
+  }
+}
 
 @media (max-width: 900px) {
 
@@ -319,6 +327,60 @@ body {
     bottom: 10vh;
     font-size: 3rem;
     padding-top: 0.7em;
+  }
+  /*BODY WRITING*/
+  .body-writing {
+    flex-direction: column;
+    margin: 4em 2em 2em 2em;
+  }
+
+  .title-table {
+    font-size: 2.4em;
+    margin-bottom: 1em;
+  }
+
+  .title-writing {
+   font-size: 1.4em;
+  }
+  .weather-description {
+    width: 90vw;
+    margin-top: 0em;
+  }
+
+  .row-weather-left {
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+  }
+
+  .background-phenomen-weather {
+    width: 45vw;
+  }
+
+  .background-phenomen-weather img{
+    width: 45vw;
+  }
+  .title-phenomen {
+    margin: 1em 3em 0.5em 3em;
+  }
+
+  .writing-phenomen {
+    margin: 1em;
+  }
+  .block-to-forecast {
+    flex-direction: column;
+  }
+
+  .title-to-forcast{
+    font-size: 2.2em;
+    padding: 0 0.5em;
+  }
+
+  .description-to-forecast {
+    padding-left: 0.5em;
+  }
+
+  .images-thermometre {
+    width: 40vw;
   }
 }
 
@@ -367,7 +429,45 @@ body {
   .title-writing {
    font-size: 1.2em;
    padding-left: 1em;
+  }
 
+  .weather-description {
+    flex-direction: column;
+    width: 85vw;
+  }
+
+  .row-weather-left {
+    margin: auto;
+  }
+  .row-weather-right{
+    margin: auto;
+  }
+
+  .background-phenomen-weather {
+    width: 80vw;
+  }
+
+  .background-phenomen-weather img{
+    width: 80vw;
+  }
+  .block-to-forecast {
+    flex-direction: column;
+  }
+
+  .title-to-forcast{
+    font-size: 1.8em;
+    padding: 0 0.5em;
+  }
+
+  .description-to-forecast {
+    padding-left: 0.5em;
+  }
+
+  .images-thermometre {
+    width: 60vw;
+  }
+  .nav-bar > li:last-child a {
+    padding-right: 0em;
   }
 }
 
@@ -419,11 +519,12 @@ body {
   /*BODY WRITING*/
   .body-writing {
     flex-direction: column;
-    margin: 3em 2em;
+    margin: 3em 2em 1em 2em;
   }
 
   .title-table {
     font-size: 2em;
+
   }
 
   .title-writing {
@@ -431,4 +532,61 @@ body {
    padding-left: 1em;
    max-width: 75vw;
   }
+
+/*four images*/
+  .weather-description {
+    flex-direction: column;
+    width: 95vw;
+    margin: 0.2em;
+  }
+
+  .row-weather-left {
+    margin: 1em auto 4em auto;
+  }
+  .row-weather-right{
+    margin: 1em auto 4em auto;
+  }
+
+  .background-phenomen-weather {
+    width: 90vw;
+  }
+
+  .background-phenomen-weather img{
+    width: 90vw;
+  }
+
+  .title-phenomen {
+    margin: 1em 3em 0.5em 3em;
+  }
+
+  .writing-phenomen {
+    margin: 1em;
+  }
+
+  .block-to-forecast {
+    flex-direction: column;
+    margin: 4em auto 6em auto;
+  }
+
+  .title-to-forcast{
+    font-size: 1.8em;
+    padding: 0 0.5em;
+  }
+
+  .description-to-forecast {
+    padding-left: 0.5em;
+  }
+
+  .images-thermometre {
+    width: 60vw;
+  }
+
+  .text-to-forcast{
+    max-width: 80vw;
+  }
+
+ .nav-bar > li:last-child a {
+   padding-right: 0em;
+ }
+
 }

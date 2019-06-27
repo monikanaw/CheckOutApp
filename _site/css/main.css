@@ -69,7 +69,7 @@ body {
   height: 30%;
   bottom: 10vh;
   z-index: 2;
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-align: center;
   padding-top: 0.6em;
   color: #000;
@@ -139,17 +139,17 @@ body {
 
 /* charts*/
 .charts {
-  height: 150vh;
+  height: auto;
 }
 
 
 .chart-first {
-  width: 60vw;
-  margin: 5vh auto;
+  width: 45vw;
+  margin: 2vh auto 5vh auto;
 }
 
 .chart-second {
-  width: 60vw;
+  width: 45vw;
   margin: 5vh auto;
 }
 
@@ -296,4 +296,139 @@ body {
   margin: 2em auto 4em 4em;
   color: #f32e04;
   font-size: 1.4em;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 900px) {
+
+  .chart-first {
+    width: 65vw;
+    margin: 5vh auto;
+  }
+
+  .chart-second {
+    width: 65vw;
+    margin: 5vh auto;
+  }
+  .form-control{
+    width: 25vw;
+  }
+  .greeting {
+    height: 20%;
+    bottom: 10vh;
+    font-size: 3rem;
+    padding-top: 0.7em;
+  }
+}
+
+@media (max-width: 700px) {
+  .chart-first {
+    width: 80vw;
+    margin: 5vh auto;
+  }
+
+  .chart-second {
+    width: 80vw;
+    margin: 5vh auto;
+  }
+
+  .title-for-checking{
+    font-size: 2.5em;
+  }
+
+  .form-control{
+    width: 50vw;
+  }
+
+  .lack-of-info-in-input{
+    max-width: 80vw;
+  }
+  .body-image {
+    background-position: 50% 30%;
+  }
+  .greeting {
+    height: 20%;
+    bottom: 10vh;
+    font-size: 2.2rem;
+    padding-top: 1.2em;
+  }
+  /*BODY WRITING*/
+  .body-writing {
+    flex-direction: column;
+    margin-top: 3em;
+  }
+
+  .title-table {
+    font-size: 2em;
+    margin-bottom: 2em;
+  }
+
+  .title-writing {
+   font-size: 1.2em;
+   padding-left: 1em;
+
+  }
+}
+
+
+@media (max-width: 450px) {
+/*subpage*/
+  .chart-first {
+    width: 100vw;
+    margin: 5vh auto;
+  }
+
+  .chart-second {
+    width: 100vw;
+    margin: 5vh auto;
+  }
+
+  .title-for-checking{
+    font-size: 2.5em;
+  }
+  .form-control{
+    width: 70vw;
+  }
+  .greeting-to-form{
+    margin-left: 2em;
+  }
+
+  .lack-of-info-in-input{
+    margin-left: 1em;
+    max-width: 80vw;
+  }
+  .city-current-info {
+    margin-left: 1em;
+    max-width: 70vw;
+  }
+
+/*body greeting*/
+  .body-image {
+    background-position: 50% 30%;
+  }
+
+  /*body greeting*/
+  .greeting {
+    height: 20%;
+    bottom: 10vh;
+    font-size: 2rem;
+    padding-top: 1.2em;
+  }
+
+  /*BODY WRITING*/
+  .body-writing {
+    flex-direction: column;
+    margin: 3em 2em;
+  }
+
+  .title-table {
+    font-size: 2em;
+  }
+
+  .title-writing {
+   font-size: 1.2em;
+   padding-left: 1em;
+   max-width: 75vw;
+  }
 }

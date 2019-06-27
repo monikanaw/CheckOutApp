@@ -1,4 +1,5 @@
 
+
 //four images abou weather
 $(document).ready(function() {
     $('.background-phenomen-weather').mouseover(function() {
@@ -275,8 +276,9 @@ function chartForWeather(x){
             fill: false,
             lineTension: 0.1,
             borderColor: "rgb(165, 176, 52)",
-            pointBorderColor: "rgb(101, 106, 52)",
-            pointBackgroundColor: "rgba(101, 106, 52, 0.8)",
+            pointBorderColor: "rgb(3, 41, 3)",
+            pointBackgroundColor: "rgba(3, 41, 3, 0.8)",
+            pointRadius: 2,
             label:'temperature',
             data: temperaturesArrayinCelsiusRounded(x)
           }]
@@ -287,6 +289,7 @@ function chartForWeather(x){
                scaleLabel: {
                     display: true,
                     labelString: 'temperature[°C]',
+                    fontColor: "rgb(165, 176, 52)",
                   },
                 ticks: {
                     max: getMaxValue(x),
@@ -300,7 +303,7 @@ function chartForWeather(x){
             fontSize: 25
           },
           legend: {
-            position: 'right'
+            position: 'top'
           }
         }
       });
@@ -324,16 +327,18 @@ function chartForWeatherSecond(x){
             fill: false,
             lineTension: 0.1,
             borderColor: "rgb(240, 44, 71)",
-            pointBorderColor: "rgb(171, 13, 34)",
-            pointBackgroundColor: "rgba(171, 13, 34, 0.8)",
+            pointBorderColor: "rgb(91, 37, 25)",
+            pointBackgroundColor: "rgba(91, 37, 25, 0.8)",
+            pointRadius: 2,
             label:'pressure',
             data: pressureArray(x),
             yAxisID: 'y-axis-1'},{
               fill: false,
               lineTension: 0.1,
               borderColor: "rgb(118, 186, 208)",
-              pointBorderColor: "rgb(19, 81, 100)",
-              pointBackgroundColor: "rgba(19, 81, 100, 0.8)",
+              pointBorderColor: "rgb(2, 8, 56)",
+              pointBackgroundColor: "rgba(2, 8, 56, 0.8)",
+              pointRadius: 2,
               label:'wind speed',
               data: speedWindArray(x),
               yAxisID: 'y-axis-2'}
@@ -344,7 +349,12 @@ function chartForWeatherSecond(x){
             yAxes: [{
               scaleLabel: {
                    display: true,
-                   labelString: 'pressure[hPa]',
+                   labelString: 'air pressure[hPa]',
+                   fontColor: "rgb(240, 44, 71)",
+                 },
+                 ticks: {
+                      fontColor: "rgb(240, 44, 71)",
+                      fontSize: 10
                  },
               type: 'linear',
               display: true,
@@ -355,6 +365,10 @@ function chartForWeatherSecond(x){
                   scaleLabel: {
                        display: true,
                        labelString: 'wind speed[km/h]',
+                       fontColor: "rgb(118, 186, 208)",
+                     },
+                     ticks: {
+                          fontColor: "rgb(118, 186, 208)",
                      },
   							type: 'linear',
   							display: true,
@@ -368,11 +382,11 @@ function chartForWeatherSecond(x){
           },
           title: {
             display: true,
-            text: 'Pressure and speed wind for five days',
+            text: 'Air pressure and wind speed for five days',
             fontSize: 25
           },
           legend: {
-            position: 'right'
+            position: 'top'
           }
         }
       });

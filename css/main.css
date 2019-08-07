@@ -70,11 +70,11 @@ height: 100%;
   bottom: 10vh;
   z-index: 2;
   font-size: 4.5rem;
-  text-align: center;
   color: #000;
   font-family: "Aclonica";
   text-transform: uppercase;
-  padding-top: 8vh;
+  text-align: center;
+  padding-top: 0.7em;
 }
 
 /*BODY WRITING*/
@@ -82,7 +82,8 @@ height: 100%;
  max-width: 85vw;
  display: flex;
  align-items: center;
- margin: 7em auto 0em auto;
+ margin: 7em auto 4em auto;
+ height: auto;
 }
 
 .title-table {
@@ -108,13 +109,18 @@ font-style: italic;
  height: 10vh;
  background-size: cover;
  padding-bottom: 0;
+ position: relative;
 }
 
 .footer-writing{
  color: #fff;
- text-align: center;
+ white-space: nowrap;
+ overflow: hidden;
  font-weight: bold;
- padding-top: 1.5em;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
 }
 
 /*form for user*/
@@ -151,7 +157,7 @@ font-style: italic;
 .weather-description {
  display: flex;
  max-width: 90vw;
- margin: 5em auto;
+ margin: auto;
  justify-content: space-around;
 }
 
@@ -164,7 +170,7 @@ font-style: italic;
 }
 
 .background-phenomen-weather {
- width: 35vw;
+ width: 100%;
  position: relative;
  margin-top: 4em
 }
@@ -183,7 +189,7 @@ font-style: italic;
  font-family: "Aclonica";
 }
 
-.phenomen{
+.phenomen {
  position: absolute;
  top: 0px;
  background-color: rgba(0, 0, 0, 0.8);
@@ -212,6 +218,16 @@ font-style: italic;
  display: flex;
  max-width: 90vw;
  margin: 8em auto 6em auto;
+ justify-content: space-between;
+}
+
+.text-to-forecast {
+  flex: 1;
+}
+
+.images-to-forecat{
+  flex: 0 0 40vw;
+  text-align: center;
 }
 
 .title-to-forcast{
@@ -219,7 +235,10 @@ font-style: italic;
  font-size: 3em;
  font-weight: bold;
  padding: 0 1em;
- font-family: "Times New Roma"
+ font-family: "Times New Roma";
+ margin-bottom: 1em;
+ max-width: 100%;
+ text-align: center;
 }
 
 .description-to-forecast {
@@ -227,20 +246,17 @@ font-style: italic;
  font-size: 1em;
  font-family: "Ariel";
  font-style: italic;
+ margin: auto;
+ max-width: 80%;
+ text-align: center;
 }
 
 .images-thermometre {
- width: 40vw;
+ width: 80%;
+ margin: 4em auto auto;
  max-height: 30vh;
 }
 
-.text-to-forcast{
- max-width: 30vw;
-}
-
-.images-to-forecat{
- margin-left: 30px;
-}
 
 /*subpage*/
 .cover-for-checking {
@@ -287,7 +303,7 @@ font-style: italic;
 }
 
 /*MEDIA QUERIES*/
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
  .body-writing {
     max-width: 80vw;
  }
@@ -297,9 +313,9 @@ font-style: italic;
  .title-writing {
   font-size: 1.4em;
  }
-}
+} */
 
-@media (max-width: 900px) {
+@media (min-width: 781px) and (max-width: 1300px) and (orientation: portrait) {
 
  .chart-first {
    width: 65vw;
@@ -313,16 +329,19 @@ font-style: italic;
  .form-control{
    width: 25vw;
  }
+ /*greeting*/
+ .body-image {
+   background-position: center center;
+ }
  .greeting {
-   height: 20%;
    bottom: 10vh;
-   font-size: 3rem;
-   padding-top: 0.7em;
+   font-size: 3.5rem;
+   padding-top: 1em;
  }
  /*BODY WRITING*/
  .body-writing {
    flex-direction: column;
-   margin: 4em 2em 2em 2em;
+   margin: 7em 2em -6em 0em;
  }
 
  .title-table {
@@ -333,22 +352,21 @@ font-style: italic;
  .title-writing {
   font-size: 1.4em;
  }
- .weather-description {
-   width: 90vw;
-   margin-top: 0em;
+ .row-weather-right{
+  margin: -1em auto 4em auto;
  }
 
  .row-weather-left {
-   margin-right: 0.5em;
-   margin-left: 0.5em;
+  margin: 3em auto 4em auto;
  }
-
  .background-phenomen-weather {
-   width: 45vw;
+   width: 100%;
  }
 
  .background-phenomen-weather img{
-   width: 45vw;
+   width: 40vw;
+   height: 30vh;
+
  }
  .title-phenomen {
    margin: 1em 3em 0.5em 3em;
@@ -363,19 +381,19 @@ font-style: italic;
 
  .title-to-forcast{
    font-size: 2.2em;
-   padding: 0 0.5em;
  }
 
  .description-to-forecast {
-   padding-left: 0.5em;
+   font-size: 18px;
+   line-height: 1.3;
  }
 
  .images-thermometre {
-   width: 40vw;
+   max-width: 450px;
  }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 451px) and (max-width: 780px) and (orientation: portrait) {
  .chart-first {
    width: 80vw;
    margin: 5vh auto;
@@ -403,28 +421,29 @@ font-style: italic;
  .greeting {
    height: 20%;
    bottom: 10vh;
-   font-size: 2.2rem;
-   padding-top: 1.2em;
+   font-size: 2.8rem;
+   padding-top: 1.4em;
  }
  /*BODY WRITING*/
  .body-writing {
    flex-direction: column;
-   margin-top: 3em;
+   padding-top: 2em;
+   margin-bottom: 3em;
  }
 
  .title-table {
-   font-size: 2em;
+   font-size: 2.5em;
    margin-bottom: 2em;
  }
 
  .title-writing {
   font-size: 1.2em;
-  padding-left: 1em;
+  padding-left: 3em;
+  flex: 1;
  }
 
  .weather-description {
    flex-direction: column;
-   width: 85vw;
  }
 
  .row-weather-left {
@@ -435,27 +454,27 @@ font-style: italic;
  }
 
  .background-phenomen-weather {
-   width: 80vw;
+   width: 100%;
  }
 
  .background-phenomen-weather img{
-   width: 80vw;
+   width: 60vw;
+   height: 30vh;
  }
+
  .block-to-forecast {
    flex-direction: column;
+   margin-top: 6em;
  }
 
  .title-to-forcast{
-   font-size: 1.8em;
-   padding: 0 0.5em;
- }
-
- .description-to-forecast {
-   padding-left: 0.5em;
+   font-size: 2.2em;
+   margin-top: 2.2em;
  }
 
  .images-thermometre {
    width: 60vw;
+   padding-top: 2em;
  }
  .nav-bar > li:last-child a {
    padding-right: 0em;
@@ -463,7 +482,7 @@ font-style: italic;
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 450px) and (orientation: portrait) {
 /*subpage*/
  .chart-first {
    width: 100vw;
@@ -501,14 +520,14 @@ font-style: italic;
 
  .greeting {
    height: 20vh;
-   padding-top: 0.8em;
+   padding-top: 1em;
+   font-size: 2em;
  }
-
 
  /*BODY WRITING*/
  .body-writing {
    flex-direction: column;
-   margin: 3em 2em 1em 2em;
+   margin: 5em 2em 1em 2em;
  }
 
  .title-table {
@@ -535,7 +554,7 @@ font-style: italic;
  }
 
  .background-phenomen-weather {
-   width: 90vw;
+   width: 100%;
  }
 
  .background-phenomen-weather img{
@@ -553,28 +572,23 @@ font-style: italic;
 
  .block-to-forecast {
    flex-direction: column;
-   margin: 4em auto 6em auto;
+   margin: 2em auto 0em auto;
  }
 
  .title-to-forcast{
    font-size: 1.8em;
-   padding: 0 0.5em;
  }
 
- .description-to-forecast {
-   padding-left: 0.5em;
+ .images-to-forecat {
+   flex: 0 0 90vw;
  }
 
  .images-thermometre {
-   width: 60vw;
- }
-
- .text-to-forcast{
-   max-width: 80vw;
+  width: 90%;
+  margin-top: 2em;
+  margin-bottom: 0em;
  }
 
 .nav-bar > li:last-child a {
   padding-right: 0em;
-}
-
 }

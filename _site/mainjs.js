@@ -1,18 +1,10 @@
 //four images about weather
 $(document).ready(function() {
-    $('.background-phenomen-weather').on('touchstart mouseover', function() {
-      $(this).children('div').removeClass("hidden");
-      $(this).children('p').addClass("hidden");
-    });
-
-    $('.background-phenomen-weather').on('mouseout', function() {
-      $('.phenomen').addClass('hidden');
-      $('p').removeClass("hidden");
-    });
-
-    // $('background-phenomen-weather').click(function() {
-    //     $(this).toggleClass("hidden");
-    //   });
+  var hoverOrClick = function () {
+    $(this).children('div').toggleClass("hidden");
+    $(this).children('p').toggleClass("hidden");
+  }
+  $('.background-phenomen-weather').click(hoverOrClick).hover(hoverOrClick);
 
 });
 

@@ -74,12 +74,14 @@ height: 100%;
   font-family: "Aclonica";
   text-transform: uppercase;
   text-align: center;
-  padding-top: 0.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*BODY WRITING*/
 .body-writing {
- max-width: 85vw;
+ width: 85%;
  display: flex;
  align-items: center;
  margin: 7em auto 4em auto;
@@ -107,6 +109,7 @@ font-style: italic;
 .footer-bar {
  background-color: #000;
  height: 10vh;
+ max-height: 100px;
  background-size: cover;
  padding-bottom: 0;
  position: relative;
@@ -121,36 +124,6 @@ font-style: italic;
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
-}
-
-/*form for user*/
-.weather-form {
- margin: 3em 3em;
- max-width: 40vw;
-}
-
-.btn-secondary {
- margin-left: 1em;
-}
-
-/* Other*/
-.hidden {
-  display: none;
-}
-
-/* charts*/
-.charts {
- height: auto;
-}
-
-.chart-first {
- width: 45vw;
- margin: 2vh auto 5vh auto;
-}
-
-.chart-second {
- width: 45vw;
- margin: 5vh auto;
 }
 
 /* four images*/
@@ -178,6 +151,8 @@ font-style: italic;
 .background-phenomen-weather img{
  width: 35vw;
  height: 50vh;
+ max-height: 330px;
+ max-width: 500px;
 }
 
 .title-of-weather {
@@ -196,17 +171,20 @@ font-style: italic;
  background-size: cover;
  width: 100%;
  height: 100%;
+ display: flex;
+ justify-content: space-around;
+ text-align: center;
+ flex-direction: column;
 }
 
 .title-phenomen {
  color: #fff;
- margin: 2em 3em;
+ margin: auto;
 }
 
 .writing-phenomen {
  color: #fff;
- text-align: center;
- margin: 2em;
+ margin: auto 2em;
 }
 
 /*link to the forecast*/
@@ -257,12 +235,15 @@ font-style: italic;
  max-height: 30vh;
 }
 
-
-/*subpage*/
+/*S U B P A G E*/
+.content-wrap {
+  min-height: 100vh;
+}
 .cover-for-checking {
    background-image: url("/images/winter.jpg");
    background-size: cover;
    height: 30vh;
+   max-height: 180px;
    width: 100%;
    background-position: 10% 30%;
    position: relative;
@@ -301,19 +282,121 @@ font-style: italic;
  color: #f32e04;
  font-size: 1.4em;
 }
+/*form for user*/
+.weather-form {
+ margin: 3em 3em;
+ max-width: 50vw;
+}
 
-/*MEDIA QUERIES*/
-/* @media (max-width: 1200px) {
- .body-writing {
-    max-width: 80vw;
- }
- .title-table {
-   font-size: 3.2em;
- }
- .title-writing {
-  font-size: 1.4em;
- }
-} */
+.btn-secondary {
+ margin-left: 1em;
+ margin-bottom: 2em;
+}
+
+/* Other*/
+.hidden {
+  display: none;
+}
+
+/* charts*/
+.charts {
+ height: auto;
+}
+
+.chart-first {
+ width: 45vw;
+ margin: 2vh auto 5vh auto;
+}
+
+.chart-second {
+ width: 45vw;
+ margin: 5vh auto;
+}
+
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .greeting {
+      font-size: 2.5em;
+  }
+  /*BODY WRITING*/
+  .title-writing {
+    flex: 0 0 60vw;
+    font-size: 1em
+  }
+
+  .title-table {
+    font-size: 2em;
+  }
+
+/* four images*/
+  .background-phenomen-weather img{
+   width: 40vw;
+  }
+
+  .row-weather-right{
+   margin: -1em auto 4em auto;
+  }
+
+  .row-weather-left {
+   margin: 3em auto 4em auto;
+  }
+
+  /*link to the forecast*/
+  .block-to-forecast {
+    margin-top: 4em;
+  }
+.title-to-forcast {
+  font-size: 1.8em;
+}
+.title-phenomen {
+  font-size: 1.5em;
+}
+.writing-phenomen {
+  font-size: 0.9em;
+}
+/*S U B P A G E*/
+.title-for-checking {
+  font-size: 2.3em;
+}
+.chart-first,
+.chart-second{
+  width: 65vw;
+}
+}
+
+@media (min-width: 901px) and (max-width: 1200px) and (orientation: landscape){
+
+/*BODY WRITING*/
+.title-table {
+  font-size: 3.2em;
+}
+
+/* four images*/
+.background-phenomen-weather img {
+   height: 30vh;
+}
+
+/*link to the forecast*/
+.title-to-forcast {
+  font-size: 2.5em;
+}
+/*S U B P A G E*/
+.chart-first,
+.chart-second{
+  width: 55vw;
+}
+}
+
+@media (min-width: 1500px) and (max-width: 2000px) {
+
+  .row-weather-right{
+   margin-left: 10em;
+  }
+
+  .row-weather-left {
+   margin-right: 10em;
+  }
+}
 
 @media (min-width: 781px) and (max-width: 1300px) and (orientation: portrait) {
 
@@ -334,10 +417,8 @@ font-style: italic;
    background-position: center center;
  }
  .greeting {
-   bottom: 10vh;
    font-size: 3.5rem;
-   padding-top: 1em;
- }
+  }
  /*BODY WRITING*/
  .body-writing {
    flex-direction: column;
@@ -347,6 +428,7 @@ font-style: italic;
  .title-table {
    font-size: 2.4em;
    margin-bottom: 1em;
+   margin-left: 2em;
  }
 
  .title-writing {
@@ -365,16 +447,9 @@ font-style: italic;
 
  .background-phenomen-weather img{
    width: 40vw;
-   height: 30vh;
-
- }
- .title-phenomen {
-   margin: 1em 3em 0.5em 3em;
+   height: 25vh;
  }
 
- .writing-phenomen {
-   margin: 1em;
- }
  .block-to-forecast {
    flex-direction: column;
  }
@@ -420,9 +495,7 @@ font-style: italic;
  }
  .greeting {
    height: 20%;
-   bottom: 10vh;
    font-size: 2.8rem;
-   padding-top: 1.4em;
  }
  /*BODY WRITING*/
  .body-writing {
@@ -434,6 +507,7 @@ font-style: italic;
  .title-table {
    font-size: 2.5em;
    margin-bottom: 2em;
+   text-align: center;
  }
 
  .title-writing {
@@ -483,7 +557,7 @@ font-style: italic;
 
 
 @media (max-width: 450px) and (orientation: portrait) {
-/*subpage*/
+/*SUBPAGE*/
  .chart-first {
    width: 100vw;
    margin: 5vh auto;
@@ -495,7 +569,8 @@ font-style: italic;
  }
 
  .title-for-checking{
-   font-size: 2.5em;
+   font-size: 2em;
+   max-width: 80%;
  }
  .form-control{
    width: 70vw;
@@ -520,7 +595,6 @@ font-style: italic;
 
  .greeting {
    height: 20vh;
-   padding-top: 1em;
    font-size: 2em;
  }
 
@@ -532,6 +606,8 @@ font-style: italic;
 
  .title-table {
    font-size: 2em;
+   margin-bottom: 1em;
+   text-align: center;
  }
 
  .title-writing {
@@ -560,14 +636,6 @@ font-style: italic;
  .background-phenomen-weather img{
    width: 90vw;
    max-height: 300px;
- }
-
- .title-phenomen {
-   margin: 1em 3em 0.5em 3em;
- }
-
- .writing-phenomen {
-   margin: 1em;
  }
 
  .block-to-forecast {

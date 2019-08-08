@@ -1,14 +1,19 @@
-//four images abou weather
+//four images about weather
 $(document).ready(function() {
-    $('.background-phenomen-weather').on('click mouseover', function() {
+    $('.background-phenomen-weather').on('touchstart mouseover', function() {
       $(this).children('div').removeClass("hidden");
       $(this).children('p').addClass("hidden");
     });
 
-    $('.background-phenomen-weather').on('click mouseout', function() {
+    $('.background-phenomen-weather').on('mouseout', function() {
       $('.phenomen').addClass('hidden');
       $('p').removeClass("hidden");
     });
+
+    // $('background-phenomen-weather').click(function() {
+    //     $(this).toggleClass("hidden");
+    //   });
+
 });
 
 //the weather
@@ -247,7 +252,7 @@ $(document).ready(function() {
 
 
 
-function chartForWeather(x){
+function chartForWeather(dataToChart){
     $(document).ready(function() {
       let myChart = document.getElementById('myChart').getContext('2d');
 
@@ -259,7 +264,7 @@ function chartForWeather(x){
       let weatherChart = new Chart (myChart, {
         type:'line',
         data: {
-          labels:removingCharactersFromString(x),
+          labels:removingCharactersFromString(dataToChart),
           datasets:[{
             fill: false,
             lineTension: 0.1,
@@ -268,7 +273,7 @@ function chartForWeather(x){
             pointBackgroundColor: "rgba(3, 41, 3, 0.8)",
             pointRadius: 2,
             label:'temperature',
-            data: temperaturesArrayinCelsiusRounded(x)
+            data: temperaturesArrayinCelsiusRounded(dataToChart)
           }]
         },
         options: {
@@ -280,8 +285,8 @@ function chartForWeather(x){
                     fontColor: "rgb(165, 176, 52)",
                   },
                 ticks: {
-                    max: getMaxValue(x),
-                    min: getMinValue(x),
+                    max: getMaxValue(dataToChart),
+                    min: getMinValue(dataToChart),
                 }
              }]
           },
@@ -299,7 +304,7 @@ function chartForWeather(x){
 }
 
 
-function chartForWeatherSecond(x){
+function chartForWeatherSecond(dataToChart){
     $(document).ready(function() {
       let myChart = document.getElementById('myChart').getContext('2d');
 
@@ -310,7 +315,7 @@ function chartForWeatherSecond(x){
       let weatherChart = new Chart (myChartSecond, {
         type:'line',
         data: {
-          labels:removingCharactersFromString(x),
+          labels:removingCharactersFromString(dataToChart),
           datasets:[{
             fill: false,
             lineTension: 0.1,
@@ -319,7 +324,7 @@ function chartForWeatherSecond(x){
             pointBackgroundColor: "rgba(91, 37, 25, 0.8)",
             pointRadius: 2,
             label:'pressure',
-            data: pressureArray(x),
+            data: pressureArray(dataToChart),
             yAxisID: 'y-axis-1'},{
               fill: false,
               lineTension: 0.1,
@@ -328,7 +333,7 @@ function chartForWeatherSecond(x){
               pointBackgroundColor: "rgba(2, 8, 56, 0.8)",
               pointRadius: 2,
               label:'wind speed',
-              data: speedWindArray(x),
+              data: speedWindArray(dataToChart),
               yAxisID: 'y-axis-2'}
             ],
         },

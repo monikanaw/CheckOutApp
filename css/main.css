@@ -109,7 +109,8 @@ font-style: italic;
 .footer-bar {
  background-color: #000;
  height: 10vh;
- max-height: 100px;
+ min-height: 50px;
+ max-height: 90px;
  background-size: cover;
  padding-bottom: 0;
  position: relative;
@@ -203,12 +204,12 @@ font-style: italic;
   flex: 1;
 }
 
-.images-to-forecat{
+.images-to-forecast{
   flex: 0 0 40vw;
   text-align: center;
 }
 
-.title-to-forcast{
+.title-to-forecast{
  color: black;
  font-size: 3em;
  font-weight: bold;
@@ -345,7 +346,7 @@ font-style: italic;
   .block-to-forecast {
     margin-top: 4em;
   }
-.title-to-forcast {
+.title-to-forecast {
   font-size: 1.8em;
 }
 .title-phenomen {
@@ -373,11 +374,12 @@ font-style: italic;
 
 /* four images*/
 .background-phenomen-weather img {
-   height: 30vh;
+   height: 40vh;
+   max-height: 300px;
 }
 
 /*link to the forecast*/
-.title-to-forcast {
+.title-to-forecast {
   font-size: 2.5em;
 }
 /*S U B P A G E*/
@@ -448,13 +450,14 @@ font-style: italic;
  .background-phenomen-weather img{
    width: 40vw;
    height: 25vh;
+   max-height: 280px;
  }
 
  .block-to-forecast {
    flex-direction: column;
  }
 
- .title-to-forcast{
+ .title-to-forecast{
    font-size: 2.2em;
  }
 
@@ -541,7 +544,7 @@ font-style: italic;
    margin-top: 6em;
  }
 
- .title-to-forcast{
+ .title-to-forecast{
    font-size: 2.2em;
    margin-top: 2.2em;
  }
@@ -643,11 +646,11 @@ font-style: italic;
    margin: 2em auto 0em auto;
  }
 
- .title-to-forcast{
+ .title-to-forecast{
    font-size: 1.8em;
  }
 
- .images-to-forecat {
+ .images-to-forecast {
    flex: 0 0 90vw;
  }
 

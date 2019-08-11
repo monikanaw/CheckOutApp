@@ -14,11 +14,7 @@ $(document).ready(function() {
     $(this).children('.phenomen').toggleClass("hidden");
     $(this).children('.title-of-weather').toggleClass("hidden");
   }
-  $('.background-phenomen-weather').hover(hoverOrClick);
-  $('.background-phenomen-weather').touchstart(hoverOrClick);
-  $('.background-phenomen-weather').click(hoverOrClick);
-
-
+  $('.background-phenomen-weather').hover(hoverOrClick).touchstart(hoverOrClick);
 });
 
 //the weather

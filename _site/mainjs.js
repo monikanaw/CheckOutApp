@@ -16,6 +16,7 @@ $(document).ready(function() {
   }
   $('.background-phenomen-weather').hover(hoverOrClick);
   $('.background-phenomen-weather').touchstart(hoverOrClick);
+  $('.background-phenomen-weather').click(hoverOrClick);
 
 
 });

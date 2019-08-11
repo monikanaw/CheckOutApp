@@ -172,7 +172,7 @@ function getWeatherCurrent(city) {
 };
 
 function getWeatherForecast(city) {
-    let weatherAPI= "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=7ea00d73a83a2dc576cf68ab20a5f063"
+    let weatherAPI= "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=7ea00d73a83a2dc576cf68ab20a5f063"
 
     $.ajax({
       type: 'get',

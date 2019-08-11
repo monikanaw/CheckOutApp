@@ -1,8 +1,18 @@
-//four images about weather
+// //four images about weather
+// $(document).ready(function() {
+//   var hoverOrClick = function () {
+//     $(this).children('div').toggleClass("hidden");
+//     $(this).children('p').toggleClass("hidden");
+//   }
+//   $('.background-phenomen-weather').hover(hoverOrClick);
+//   $('.background-phenomen-weather').click(hoverOrClick);
+// });
+
+// //four images about weather
 $(document).ready(function() {
   var hoverOrClick = function () {
-    $(this).children('div').toggleClass("hidden");
-    $(this).children('p').toggleClass("hidden");
+    $(this).children('.phenomen').toggleClass("hidden");
+    $(this).children('.title-of-weather').toggleClass("hidden");
   }
   $('.background-phenomen-weather').hover(hoverOrClick);
   $('.background-phenomen-weather').click(hoverOrClick);

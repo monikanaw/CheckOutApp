@@ -15,7 +15,9 @@ $(document).ready(function() {
     $(this).children('.title-of-weather').toggleClass("hidden");
   }
   $('.background-phenomen-weather').hover(hoverOrClick);
-  $('.background-phenomen-weather').on('touchstart touchend', function() { (hoverOrClick)
+  $('.background-phenomen-weather').on('touchstart', function() { (hoverOrClick)
+  });
+  $('.background-phenomen-weather').on('touchend', function() { (hoverOrClick)
   });
 
 });

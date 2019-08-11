@@ -4,68 +4,68 @@ $(document).ready(function() {
     $(this).children('div').toggleClass("hidden");
     $(this).children('p').toggleClass("hidden");
   }
-  $('.background-phenomen-weather').click(hoverOrClick).hover(hoverOrClick);
-
+  $('.background-phenomen-weather').hover(hoverOrClick);
+  $('.background-phenomen-weather').click(hoverOrClick);
 });
 
 //the weather
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
+};
 
 function roundNumber(number) {
    return Math.round(number);
-}
+};
 
 function calvinToCelsius (calvin) {
   return (calvin - 273.15);
-}
+};
 
 function lackOfThisCity() {
   $("#notCityExist").removeClass('hidden')
-}
+};
 
 function thisCityExist() {
   $("#notCityExist").addClass('hidden');
-}
+};
 
 function notSelectedCity() {
   $("#notSelectedCity").removeClass('hidden');
-}
+};
 
 function SelectedCity() {
   $("#notSelectedCity").addClass('hidden');
-}
+};
 
 function notSelectedKindOfWeather() {
   $("#notSelectedWhichWeather").removeClass('hidden');
-}
+};
 
 function SelectedKindOfWeather() {
   $("#notSelectedWhichWeather").addClass('hidden');
-}
+};
 
 function showingCurrentWeather() {
   $("#foundCityCurrent").removeClass('hidden');
-}
+};
 
 function hidingCurrentWeather(){
   $("#foundCityCurrent").addClass('hidden');
-}
+};
 
 function hidingForecastWeather() {
   $("#foundCityForecast").addClass('hidden');
-}
+};
 
 function showingForecastWeather() {
   $("#foundCityForecast").removeClass('hidden');
-}
+};
 
 function clearInput() {
   $('input','#formWeather').val('');
   $('select','#formWeather').val('selected');
-}
+};
 
 function temperaturesArray(data) {
    let tempInK = [];

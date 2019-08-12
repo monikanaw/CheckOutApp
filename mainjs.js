@@ -272,7 +272,7 @@ function chartForWeather(dataToChart){
             yAxes: [{
                scaleLabel: {
                     display: true,
-                    labelString: 'temperature[°C]',
+                    labelString: 'temperature [°C]',
                     fontColor: "rgb(165, 176, 52)",
                   },
                 ticks: {
@@ -333,7 +333,7 @@ function chartForWeatherSecond(dataToChart){
             yAxes: [{
               scaleLabel: {
                    display: true,
-                   labelString: 'air pressure[hPa]',
+                   labelString: 'air pressure [hPa]',
                    fontColor: "rgb(240, 44, 71)",
                  },
                  ticks: {
@@ -348,7 +348,7 @@ function chartForWeatherSecond(dataToChart){
                   {
                   scaleLabel: {
                        display: true,
-                       labelString: 'wind speed[km/h]',
+                       labelString: 'wind speed [km/h]',
                        fontColor: "rgb(118, 186, 208)",
                      },
                      ticks: {
@@ -361,7 +361,6 @@ function chartForWeatherSecond(dataToChart){
   							gridLines: {
   								drawOnChartArea: false,
 							}
-
              }]
           },
           title: {
